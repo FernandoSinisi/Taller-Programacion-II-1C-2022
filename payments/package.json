@@ -1,0 +1,98 @@
+{
+    "name": "demo-payments",
+    "version": "1.0.0",
+    "description": "",
+    "main": "src/main/App.js",
+    "author": "",
+    "license": "ISC",
+    "scripts": {
+        "start": "MY_ENV=.production LOG_LEVEL=debug DD_ENV=prod DD_LOGS_INJECTION=true DD_RUNTIME_METRICS_ENABLED=true node --require dd-trace/init src/main/App.js",
+        "startdocker": "MY_ENV= LOG_LEVEL=debug node src/main/App.js",
+        "startdev": "MY_ENV=.development LOG_LEVEL=debug nodemon src/main/App.js",
+        "test": "MY_ENV=.test LOG_LEVEL=debug nyc --reporter=lcov --reporter=text mocha --exit",
+        "prepare": "husky install",
+        "release": "standard-version"
+    },
+    "dependencies": {
+        "body-parser": "1.19.0",
+        "cors": "2.8.5",
+        "dd-trace": "2.3.1",
+        "dotenv": "8.2.0",
+        "express": "4.17.1",
+        "nodemon": "2.0.15",
+        "nyc": "15.1.0",
+        "pg": "8.7.3",
+        "pg-hstore": "2.3.4",
+        "rewire": "6.0.0",
+        "sequelize": "6.6.5",
+        "sequelize-mock": "0.10.2",
+        "simple-node-logger": "21.8.12",
+        "sinon": "13.0.1",
+        "solc": "0.7.4",
+        "swagger-jsdoc": "5.0.0",
+        "swagger-ui-express": "4.3.0"
+    },
+    "eslintConfig": {
+        "parserOptions": {
+            "ecmaVersion": 2017
+        },
+        "env": {
+            "es6": true
+        }
+    },
+    "devDependencies": {
+        "@commitlint/cli": "9.1.2",
+        "@commitlint/config-conventional": "12.0.1",
+        "@ethersproject/abstract-signer": "5.0.6",
+        "@ethersproject/bignumber": "5.0.8",
+        "@openzeppelin/contracts": "3.4.0",
+        "@typechain/ethers-v5": "5.0.0",
+        "@types/chai": "4.2.13",
+        "@types/mocha": "8.2.0",
+        "@types/node": "14.14.25",
+        "@types/rewire": "^2.5.28",
+        "@typescript-eslint/eslint-plugin": "4.14.2",
+        "@typescript-eslint/parser": "4.14.2",
+        "bignumber.js": "9.0.1",
+        "chai": "4.3.6",
+        "chai-http": "4.3.0",
+        "dotenv": "8.2.0",
+        "eslint": "7.11.0",
+        "eslint-config-prettier": "6.12.0",
+        "eth-revert-reason": "^1.0.3",
+        "expect": "27.0.6",
+        "fetch-mock": "9.11.0",
+        "husky": "5.0.9",
+        "jest": "27.5.1",
+        "jest-when": "3.5.1",
+        "leafleth": "0.0.9",
+        "mocha": "9.2.2",
+        "prettier": "2.2.1",
+        "prettier-plugin-solidity": "1.0.0-beta.5",
+        "shelljs": "^0.8.5",
+        "solhint": "3.3.2",
+        "solhint-plugin-prettier": "0.0.5",
+        "sqlite3": "^5.0.8",
+        "standard-version": "^9.5.0",
+        "ts-generator": "0.1.1",
+        "ts-node": "9.1.1",
+        "typechain": "4.0.1",
+        "typescript": "4.1.3"
+    },
+    "nyc": {
+        "exclude": [
+            "src/main/App.js",
+            "src/main/SwaggerConfig.js",
+            "src/others/constants.js",
+            "src/services/Logger.js",
+            "**/*.test.js",
+            "**/*.test.ts",
+            "test/mocks/*",
+            "coverage/*"
+        ]
+    },
+    "files": [
+        "/contracts"
+    ],
+    "types": "types/index.d.ts"
+}

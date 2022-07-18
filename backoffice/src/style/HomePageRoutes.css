@@ -1,0 +1,15 @@
+.links .homepage{
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-top: 15px;
+    display: inline-block;
+}
+
+.new-line {
+    white-space: pre-line;
+}
+
+.vertical-line {
+    border-left: 4px solid lightskyblue;
+    height: 50px;
+}

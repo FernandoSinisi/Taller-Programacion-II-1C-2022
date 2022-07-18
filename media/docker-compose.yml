@@ -1,0 +1,27 @@
+version: "3"
+
+volumes:
+  postgres_media_data:
+
+services:
+  db_media:
+    image: postgres:13
+    container_name: db_media
+    environment:
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_DB=${POSTGRES_DB}
+    volumes:
+      - "postgres_media_data:/var/lib/postgresql/data/"
+    ports:
+      - "5432:5432"
+
+  media_service:
+    build:
+      context: .
+      dockerfile: Dockerfile.local
+    container_name: media_service
+    ports:
+      - ${PORT}:${PORT}
+    depends_on:
+      - db_media

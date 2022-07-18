@@ -1,0 +1,59 @@
+{
+  "expo": {
+    "name": "Spotifiuby",
+    "slug": "Spotifiuby",
+    "owner": "spotifiuby-t2",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/SpotifiubyIcon.png",
+    "splash": {
+      "image": "./assets/SpotifiubySplash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "googleServicesFile": "./google-services.json",
+      "config": {
+        "googleSignIn": {
+          "apiKey": "AIzaSyB8DZnaX6HIBlkubONcCNs7mm56UvgWlao",
+          "certificateHash": "8F0337F18EA7F43559277E223A07405A8E05C46E"
+        }
+      },
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/SpotifiubyAdaptiveIcon.png",
+        "backgroundColor": "#f5fcff"
+      },
+      "package": "com.t2.prueba.rn",
+      "intentFilters":[
+        {
+          "action": "VIEW",
+          "autoVerify": true,
+          "data": [
+            {
+              "scheme": "myapp",
+              "host": "app",
+              "pathPrefix": "/signup"
+            }
+          ],
+          "category": [
+            "BROWSABLE",
+            "DEFAULT"
+          ]
+        }
+      ]
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "scheme": "myapp"
+  }
+}
